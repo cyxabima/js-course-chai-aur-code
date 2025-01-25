@@ -52,7 +52,7 @@ const library = [
     },
     {
         title: "Eloquent JavaScript",
-        author: "Marijn Haverbeke",
+        author: "Marijn Haversine",
         genre: "Programming",
         available: false,
         copies: 0,
