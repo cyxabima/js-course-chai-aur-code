@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .heading {
+            background: #cc8b8b;
+            padding: 10px;
+            color: black;
+        }
+
+        .main {
+            background: #000;
+            color: white;
+        }
+
+        .invert {
+            color: #cc8b8b;
+            background: #000;
+        }
+    </style>
+</head>
+
+<body class="main">
+    <div style="background-color: red;">Veiw all </div>
+    <div class="main">
+        <h1 id="title" class="heading">
+            CHAI Aur Code
+        </h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quia, molestias facilis eligendi ullamus
+            provident voluptate veritatis quidem quasplaceat odio officia eos impedit error? Dolorum voluptate vitae
+            atque expedita architecto alias ullam nobis
+            reprehenderit tempore.</p>
+
+        <ul>
+            <li class="list-item">Ukasha</li>
+            <li class="list-item">Inshal</li>
+            <li class="list-item">Urwah</li>
+        </ul>
+        <button>Previous</button>
+        <input type="radio" name="option" id="ra"> option2 
+        <input type="radio" name="option" id="ra"> option3
+        <input type="radio" name="option" id="ra"> option4
+        <input type="radio" name="option" id="ra"> option5
+        <button>NEXT</button>
+
+    </div>
+    <script>
+
+        // let title = document.getElementById("title");
+        // title.style.color = "Yellow"
+        // console.log(title); 
+        // title.innerText = "Hello world";
+        // title.innerHTML = "<h1>Hello world</h1> <p> Hi and bye</p>";
+
+        // const title = document.getElementById("title");
+
+        // title.setAttribute("class", "invert");
+
+        // query selector select the first element 
+        // const p = document.querySelector("p");
+        // p.setAttribute("class", "invert");
+        // p.innerText = "Lorem is a multi line tool";
+        // p.style.backgroundColor = "green";
+        // p.style.padding = "40px";
+
+        // const list = document.querySelector("ul");
+
+        // list.querySelector("li").style.color = "Red";
+
+// // query selector all -> node list  for each is available 
+//         document.querySelectorAll(".list-item").forEach((list)=>{
+//             list.style.backgroundColor = "green"
+//             list.style.margin = "12px"
+//         });
+
+        // className -> html collection
+        let list_temp = document.getElementsByClassName("list-item");
+        list_temp = Array.from(list_temp);
+        
+        list_temp.forEach((list)=>{
+            list.style.backgroundColor = "blue"
+            list.style.margin = "12px"
+        });
+
+        // therefore we need to convert html collection into array
+
+        
+
+
+
+
+
+    </script>
+</body>
+
+</html>
