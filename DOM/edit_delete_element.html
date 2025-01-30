@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur Code</title>
+</head>
+
+<body style="background-color: #121212; color: white;">
+    <ul>
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    const list = document.querySelector('li');
+    const addItem = (text)=>{
+        const newElement = document.createElement('li');
+        newElement.textContent = text;
+        list.appendChild(newElement);
+    }
+    addItem("Python");
+    addItem("C++");
+    addItem("Go");
+    
+    // editing node;
+    
+    // document.querySelector("li:nth-child(2)").innerHTML = "C#"
+    const secondElement = document.querySelector("li:nth-child(2)")
+    const newElement = document.createElement('li');
+    newElement.textContent = "C#";
+    secondElement.replaceWith(newElement);
+
+
+    // removing element
+
+    const x = document.querySelector("li:nth-child(2)");
+    x.remove() ;
+    
+
+
+</script>
+
+</html>
