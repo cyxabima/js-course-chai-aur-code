@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul > li{
+            background-color: bisque;
+            margin-bottom: 12px;
+            list-style-type: none;
+            width: 120px;
+            height: 110px;
+
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="item1"></li>
+        <li class="item2"></li>
+        <li class="item3"></li>
+        <li class="item4"></li>
+        <li class="item5"></li>
+    </ul>
+
+</body>
+<script>
+    const ul = document.querySelector("ul");
+    ul.addEventListener("click", function (e){
+        // console.log(e.srcElement);
+        if (e.target.tagName == "LI"){
+            ul.removeChild(e.target)
+        }
+
+    })
+</script>
+</html>

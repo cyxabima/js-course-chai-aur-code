@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 20px;
+            height: 20px;
+            background-color: #414414;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="box1" style="border: 2px solid pink;"></li>
+        <li class="box2"></li>
+        <li class="box3"></li>
+    </ul>
+    <a href="/" id="link">Google.com</a>
+
+    <script>
+        // UL event listener (bubbling)
+        document.querySelector('ul').addEventListener("click", (e) => {
+            console.log("UL is clicked");
+        }, false);
+
+        // UL event listener (capturing)
+        document.querySelector('ul').addEventListener("click", (e) => {
+            console.log("UL is clicked (capturing)");
+            e.stopPropagation(); // prevent capturing of bottom
+        }, true);
+
+        // Attach event listeners to all divs
+        document.querySelectorAll('li').forEach((item) => {
+            item.addEventListener('click', (e) => {
+                console.log("A list item is clicked");
+                // e.stopPropagation(); // Stop bubbling of upper 
+            });
+        });
+
+        // Anchor click event
+        const a = document.querySelector('a');
+        a.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log("Anchor clicked:", e);
+        });
+
+        // bubbling mean bottom to top;
+        // capturing means clicking events top 1st then  bottom  ;
+        // here in event listener  false and true is for  event  prorogation 
+    </script>
+</body>
+</html>
