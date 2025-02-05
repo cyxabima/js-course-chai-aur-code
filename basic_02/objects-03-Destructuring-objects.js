@@ -1,8 +1,7 @@
 // object de structuring 
 
 let user = {
-
-    name : 'Ukasha',
+    name : 'Ukasha', 
     fName : 'Anwer',
     roll : 115,
     dept : 'CIS'

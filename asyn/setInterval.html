@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval</title>
+</head>
+
+<body>
+    <h1>Hello world</h1>
+    <button class="start">
+        start
+    </button>
+    <button class="stop">
+        stop
+    </button>
+</body>
+
+<script>
+    const h1 = document.querySelector("h1");
+    const startAnimation = document.querySelector(".start");
+    const stopAnimation = document.querySelector(".stop");
+    let h1_items = ["Hello", "HI", "By", "Why", "See You!"]
+    let ptr = 0;
+    let animation;
+    let hexCode = '0123456789ABCDEF';
+
+    function randomColor(){
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += hexCode[Math.floor(Math.random()*16)];
+            
+        }
+        return color;
+    }
+
+    function h1Changer() {
+        if (ptr < h1_items.length) {
+            h1.innerHTML = h1_items[ptr];
+            ptr++;
+        }
+        else {
+            ptr = 0;
+        }
+    }
+    
+    function bgChanger(){
+        document.body.style.backgroundColor = randomColor()
+    }
+    console.log(randomColor())
+    
+    function startInterval() {
+        if (!animation) {
+            animation = setInterval(()=>{h1Changer();
+            bgChanger();
+            }, 1000);
+            console.log(animation)
+            
+        }
+    }
+    
+    function stopInterval() {
+        if (animation) {
+            clearInterval(animation);
+            animation = null;
+            console.log(animation)
+        }
+    }
+    
+    
+    startInterval();
+
+    startAnimation.addEventListener("click", startInterval);
+
+    stopAnimation.addEventListener("click", stopInterval);
+
+</script>
+
+</html>
